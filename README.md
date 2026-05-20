@@ -1,159 +1,131 @@
-# Clase Python Flask 1114
+# Portal de Clase 1114 - Python y Flask
 
-## Que es este repo
+## Que es este proyecto
 
-Es un proyecto base de Flask.
+Es un **Portal Web educativo** donde estudiantes y profesor acceden a informacion de la clase.
 
-El objetivo del proyecto es construir paso a paso un Mini Portal de Clase Flask.
-Cada tarea agrega una pieza concreta para que el alumno entienda como se arma
-una aplicacion web desde lo mas simple hacia algo mas completo.
+**Los alumnos van a construirlo paso a paso en 8 tareas**, aprendiendo:
+- Rutas y plantillas Flask
+- Datos dinamicos con Jinja2
+- Multiples paginas
+- Bucles y listas
+- Formularios
+- Base de datos SQLite
+- Autenticacion y sesiones
+- CRUD (Create, Read, Update, Delete)
 
-Incluye:
+## El Portal incluye
 
-- una aplicacion minima en `app.py`
-- vistas HTML simples en `templates/`
-- consignas de trabajo en `tasks/`
-- comentarios breves dentro del codigo
-
-Incluye la configuracion minima para levantar el servidor y renderizar una vista inicial en la ruta `/`.
+- Pagina de inicio con info de la clase
+- Formulario de inscripcion para estudiantes
+- Base de datos de estudiantes inscritos
+- Login para Profesor y Estudiantes
+- Panel del Profesor: crear, editar, eliminar tareas
+- Panel del Estudiante: ver tareas asignadas
+- Sistema de permisos por rol
 
 ## Requisitos
 
-- Python 3 instalado
-- Terminal abierta en la carpeta del proyecto
+- Python 3.8+
+- Terminal
+- Editor de codigo (VS Code, PyCharm, etc)
 
-## Como crear el entorno virtual
+## Instalacion rapida
 
-Ubicate dentro de la carpeta del proyecto:
+1. Copia la carpeta a tu computadora
+2. Abre terminal en la carpeta
 
-```powershell
-cd clase-python-flask-1114
-```
-
-Crear `.venv` en Windows:
-
+Crear entorno virtual (Windows):
 ```powershell
 python -m venv .venv
-```
-
-Si usas Linux o macOS, el comando equivalente es:
-
-```bash
-python3 -m venv .venv
-```
-
-## Como activar `.venv`
-
-En Windows PowerShell:
-
-```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-En Windows CMD:
-
-```bat
-.venv\Scripts\activate.bat
-```
-
-En Linux o macOS:
-
+O en Linux/Mac:
 ```bash
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Si el entorno esta activo, normalmente vas a ver `(.venv)` al principio de la linea de la terminal.
-
-## Como instalar dependencias
-
-Con el entorno virtual activado:
-
+3. Instala dependencias:
 ```powershell
 pip install -r requirements.txt
 ```
 
-## Como ejecutar Flask
-
-Para ejecutar la aplicacion:
-
+4. Ejecuta el portal:
 ```powershell
 python app.py
 ```
 
-Si la aplicacion inicia correctamente, Flask va a mostrar una direccion local en la terminal, por ejemplo:
+5. Abre http://127.0.0.1:5000 en tu navegador
 
-```text
-http://127.0.0.1:5000
+## Las 8 Tareas
+
+| # | Tarea | Que aprendes |
+|---|-------|-------------|
+| 1 | Portal base | Levantar Flask, HTML, rutas basicas |
+| 2 | Datos dinamicos | Jinja2, variables de Python en HTML |
+| 3 | Multiple paginas | Varias rutas, menu de navegacion |
+| 4 | Listas y bucles | For en Jinja2, mostrar listas |
+| 5 | Formularios | Recibir datos del usuario |
+| 6 | Base de datos | SQLite, guardar datos persistentes |
+| 7 | Autenticacion | Login, sesiones, roles (Profesor vs Estudiante) |
+| 8 | CRUD completo | Crear, editar, eliminar tareas |
+
+## Estructura del proyecto
+
+```
+clase-python-flask-1114/
+├── app.py              # Aplicacion principal
+├── requirements.txt    # Dependencias
+├── portal.db          # Base de datos (se crea)
+├── templates/         # Plantillas HTML
+│   ├── index.html
+│   ├── login.html
+│   ├── panel_profesor.html
+│   ├── panel_estudiante.html
+│   └── ...mas templates
+└── tasks/             # Consignas de trabajo
+    ├── tarea-1.md
+    ├── tarea-2.md
+    └── ... tarea-8.md
 ```
 
-Abri esa direccion en el navegador.
+## Como iniciar cada tarea
 
-## Que archivos mirar primero
+1. Lee la consigna en `tasks/tarea-X.md`
+2. Sigue los pasos
+3. Modifica `app.py` y `templates/`
+4. Verifica en el navegador
+5. Entrga evidencia (capturas, archivos modificados)
 
-1. `app.py`
-2. `templates/index.html`
-3. `tasks/tarea-1.md`
-4. `tasks/tarea-2.md`
-5. `tasks/tarea-3.md`
-6. `tasks/tarea-4.md`
+## Datos de prueba (Tarea 7+)
 
-## Que hace cada parte
+Profesor:
+- Usuario: `henry`
+- Contraseña: `password123`
 
-### `app.py`
+## Conceptos que vas a dominar
 
-Es el archivo principal.
+- Backend web con Python y Flask
+- Frontend HTML con Jinja2
+- Bases de datos relacionales (SQLite)
+- Autenticacion y sesiones
+- Operaciones CRUD
+- Arquitectura MVC
+- Seguridad (hashing de contraseñas)
 
-- crea la aplicacion Flask
-- define una ruta basica para `/`
-- arranca el servidor en modo de desarrollo
+## Proximos pasos (Opcional)
 
-### `templates/index.html`
-
-Es la vista HTML inicial del proyecto.
-
-- Flask la renderiza cuando se accede a la aplicacion
-- sirve como base para trabajar con plantillas
-
-### `templates/acerca.html` y `templates/contacto.html`
-
-Son paginas internas que se crean durante la tarea 3.
-
-- permiten practicar varias rutas
-- ayudan a entender la relacion entre URL, funcion y plantilla
-
-### `requirements.txt`
-
-Lista las dependencias del proyecto.
-
-- actualmente solo incluye `Flask`
-
-### `.gitignore`
-
-Indica que archivos no se deben versionar.
-
-- por ejemplo `.venv`
-- tambien archivos temporales de Python
-
-### `tasks/tarea-1.md`
-
-Incluye una consigna inicial de trabajo.
-
-### `tasks/tarea-2.md`
-
-Introduce el paso de datos desde Python hacia una plantilla HTML.
-
-### `tasks/tarea-3.md`
-
-Introduce varias rutas y varias paginas dentro de una misma aplicacion Flask.
-
-### `tasks/tarea-4.md`
-
-Introduce listas de Python y bucles `{% for %}` en plantillas Jinja.
-
-## Objetivo
-
-Contar con una base ordenada para instalar dependencias, ejecutar Flask y ubicar rapidamente los archivos principales del proyecto.
+- Agregar calificaciones
+- Sistema de entregas de trabajos
+- Notificaciones por email
+- Interfaz mejorada con CSS
+- Deploy en internet (Heroku, PythonAnywhere)
+- API REST
 
 ## Creditos
 
-Design by profe Henry by kyrbot.com.
+Diseño y contenido: Henry Ortegon (Kyrbot Innovations)
+
+Portal de Clase 1114 - Introduccion a Python y Flask
