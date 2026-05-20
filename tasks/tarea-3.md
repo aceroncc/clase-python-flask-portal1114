@@ -32,7 +32,7 @@ def informacion():
     datos = {
         "aula": "215",
         "profesor": "Henry Ortegon",
-        "horario": "Lunes 14:00-16:00 | Miercoles 16:45-18:10 | Jueves 12:30-14:20",
+        "horario": "Miercoles 16:45-18:10 | Jueves 12:30-14:20",
         "objetivos": [
             "Aprender Python basico",
             "Entender Flask y aplicaciones web",
