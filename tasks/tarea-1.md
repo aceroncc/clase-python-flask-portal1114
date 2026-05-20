@@ -75,7 +75,7 @@ Abre templates/index.html y cambia:
 3. Agrega un nuevo <p> que diga:
 ```html
 <p>Profesor: Henry Ortegon</p>
-<p>Horario: Lunes 14:00-16:00 | Miercoles 16:40-18:14 | Jueves 12:40-14:20</p>
+<p>Horario: Lunes 14:00-16:00 | Miercoles 16:45-18:10 | Jueves 12:30-14:20</p>
 ```
 
 Guarda el archivo y recarga la pagina en el navegador (Ctrl+R).

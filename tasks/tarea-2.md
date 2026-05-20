@@ -47,7 +47,7 @@ def inicio():
     # Datos del portal
     nombre_profesor = "Henry Ortegon"
     email_profesor = "henry@kyrbot.com"
-    horario = "Lunes 14:00-16:00 | Miercoles 16:40-18:14 | Jueves 12:40-14:20"
+    horario = "Lunes 14:00-16:00 | Miercoles 16:45-18:10 | Jueves 12:30-14:20"
     aula = "215"
     descripcion = "Aprenderemos Python, Flask y construiremos un portal web real"
     
