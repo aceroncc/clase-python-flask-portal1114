@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción</title>
+</head>
+<body>
+
+<nav>
+    <a href="/">Inicio</a> |
+    <a href="/informacion">Información</a> |
+    <a href="/recursos">Recursos</a> |
+    <a href="/tareas">Tareas</a> |
+    <a href="/inscripcion">Inscripción</a>
+</nav>
+
+<h1>Inscripción a la Clase</h1>
+
+{% if mensaje %}
+<p>{{ mensaje }}</p>
+{% endif %}
+
+<form method="POST">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <br><br>
+
+    <label>Programa:</label>
+    <select name="programa" required>
+        <option value="">Seleccione</option>
+        <option value="Sistemas">Sistemas</option>
+        <option value="Ingenieria">Ingeniería</option>
+        <option value="Otro">Otro</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Inscribirse</button>
+</form>
+
+</body>
+</html>

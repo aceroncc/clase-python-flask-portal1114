@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Estudiante</title>
+</head>
+<body>
+
+<h1>Panel del Estudiante</h1>
+
+<p>Bienvenido {{ usuario }}</p>
+
+{% if tareas %}
+<table border="1">
+    <tr>
+        <th>Título</th>
+        <th>Fecha</th>
+        <th>Descripción</th>
+    </tr>
+
+    {% for tarea in tareas %}
+    <tr>
+        <td>{{ tarea.titulo }}</td>
+        <td>{{ tarea.fecha_entrega }}</td>
+        <td>{{ tarea.descripcion }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+</body>
+</html>
