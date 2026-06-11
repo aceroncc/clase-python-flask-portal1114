@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Estudiantes</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Estudiantes{% endblock %}
+
+{% block content %}
 
 <h1>Estudiantes Inscritos</h1>
 
-{% if estudiantes %}
-<table border="1">
-    <tr>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Programa</th>
-    </tr>
+<table class="table table-bordered table-striped mt-4">
 
-    {% for estudiante in estudiantes %}
-    <tr>
-        <td>{{ estudiante.nombre }}</td>
-        <td>{{ estudiante.email }}</td>
-        <td>{{ estudiante.programa }}</td>
-    </tr>
-    {% endfor %}
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Programa</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for estudiante in estudiantes %}
+        <tr>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.email }}</td>
+            <td>{{ estudiante.programa }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
 </table>
-{% else %}
-<p>No hay estudiantes registrados.</p>
-{% endif %}
 
-</body>
-</html>
+{% endblock %}

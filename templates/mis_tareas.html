@@ -1,37 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mis Tareas</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Mis Tareas</h1>
+{% block title %}Mis Tareas{% endblock %}
 
-<a href="/crear-tarea">Nueva Tarea</a>
+{% block content %}
 
-{% if tareas %}
-<table border="1">
+<h1>Administrar Tareas</h1>
 
-    <tr>
-        <th>Título</th>
-        <th>Fecha Entrega</th>
-        <th>Acciones</th>
-    </tr>
+<a href="/crear-tarea" class="btn btn-success mb-3">
+    Nueva Tarea
+</a>
 
-    {% for tarea in tareas %}
-    <tr>
-        <td>{{ tarea.titulo }}</td>
-        <td>{{ tarea.fecha_entrega }}</td>
-        <td>
-            <a href="/editar-tarea/{{ tarea.id }}">Editar</a>
-            <a href="/eliminar-tarea/{{ tarea.id }}">Eliminar</a>
-        </td>
-    </tr>
-    {% endfor %}
+<table class="table table-bordered">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Titulo</th>
+            <th>Entrega</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for tarea in tareas %}
+        <tr>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.fecha_entrega }}</td>
+
+            <td>
+                <a href="/editar-tarea/{{ tarea.id }}" class="btn btn-warning btn-sm">
+                    Editar
+                </a>
+
+                <a href="/eliminar-tarea/{{ tarea.id }}" class="btn btn-danger btn-sm">
+                    Eliminar
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 
 </table>
-{% endif %}
 
-</body>
-</html>
+{% endblock %}

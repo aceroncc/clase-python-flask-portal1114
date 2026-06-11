@@ -1,20 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Panel Profesor</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Panel Profesor{% endblock %}
+
+{% block content %}
 
 <h1>Panel del Profesor</h1>
 
-<p>Bienvenido {{ usuario }}</p>
+<div class="alert alert-success">
+    Bienvenido {{ usuario }}
+</div>
 
-<ul>
-    <li><a href="/estudiantes">Ver estudiantes</a></li>
-    <li><a href="/mis-tareas">Mis tareas</a></li>
-    <li><a href="/logout">Cerrar sesión</a></li>
-</ul>
+<div class="list-group">
 
-</body>
-</html>
+    <a href="/crear-tarea" class="list-group-item list-group-item-action">
+        Crear Tarea
+    </a>
+
+    <a href="/mis-tareas" class="list-group-item list-group-item-action">
+        Administrar Tareas
+    </a>
+
+    <a href="/estudiantes" class="list-group-item list-group-item-action">
+        Ver Estudiantes
+    </a>
+
+    <a href="/logout" class="list-group-item list-group-item-action text-danger">
+        Cerrar Sesion
+    </a>
+
+</div>
+
+{% endblock %}

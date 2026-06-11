@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Recursos{% endblock %}
+
+{% block content %}
+
+<h1>Recursos de la Clase</h1>
+
+<div class="list-group mt-4">
+    {% for enlace in enlaces %}
+    <a href="{{ enlace.url }}" target="_blank" class="list-group-item list-group-item-action">
+        {{ enlace.nombre }}
+    </a>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,32 +1,37 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Panel Estudiante</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Panel Estudiante{% endblock %}
+
+{% block content %}
 
 <h1>Panel del Estudiante</h1>
 
-<p>Bienvenido {{ usuario }}</p>
+<div class="alert alert-primary">
+    Bienvenido {{ usuario }}
+</div>
 
-{% if tareas %}
-<table border="1">
-    <tr>
-        <th>Título</th>
-        <th>Fecha</th>
-        <th>Descripción</th>
-    </tr>
+<h3>Tareas Asignadas</h3>
 
-    {% for tarea in tareas %}
-    <tr>
-        <td>{{ tarea.titulo }}</td>
-        <td>{{ tarea.fecha_entrega }}</td>
-        <td>{{ tarea.descripcion }}</td>
-    </tr>
-    {% endfor %}
+<table class="table table-striped">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Entrega</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for tarea in tareas %}
+        <tr>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.descripcion }}</td>
+            <td>{{ tarea.fecha_entrega }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
 </table>
-{% endif %}
 
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Tareas{% endblock %}
+
+{% block content %}
+
+<h1>Tareas Entregables</h1>
+
+<table class="table table-striped mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>Numero</th>
+            <th>Titulo</th>
+            <th>Fecha Entrega</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for tarea in tareas %}
+        <tr>
+            <td>{{ tarea.numero }}</td>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.fecha }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

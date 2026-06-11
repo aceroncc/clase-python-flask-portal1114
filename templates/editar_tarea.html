@@ -1,33 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Editar Tarea</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Editar Tarea{% endblock %}
+
+{% block content %}
 
 <h1>Editar Tarea</h1>
 
 <form method="POST">
 
-    <label>Título:</label>
-    <input type="text" name="titulo" value="{{ tarea.titulo }}" required>
+    <div class="mb-3">
+        <label>Titulo</label>
+        <input type="text" name="titulo" value="{{ tarea.titulo }}" class="form-control">
+    </div>
 
-    <br><br>
+    <div class="mb-3">
+        <label>Descripcion</label>
+        <textarea name="descripcion" class="form-control">{{ tarea.descripcion }}</textarea>
+    </div>
 
-    <label>Descripción:</label>
-    <textarea name="descripcion" required>{{ tarea.descripcion }}</textarea>
+    <div class="mb-3">
+        <label>Fecha Entrega</label>
+        <input type="date" name="fecha_entrega" value="{{ tarea.fecha_entrega }}" class="form-control">
+    </div>
 
-    <br><br>
-
-    <label>Fecha Entrega:</label>
-    <input type="date" name="fecha_entrega" value="{{ tarea.fecha_entrega }}" required>
-
-    <br><br>
-
-    <button type="submit">Actualizar</button>
+    <button class="btn btn-warning">
+        Guardar Cambios
+    </button>
 
 </form>
 
-</body>
-</html>
+{% endblock %}
